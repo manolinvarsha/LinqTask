@@ -1,0 +1,44 @@
+﻿@model IEnumerable<LinqTask.Models.SalesReport>
+
+@{
+    ViewBag.Title = "SalesReport";
+}
+
+<h2>SalesReport</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <div class="container-fluid py-4">
+        <h4 class="text-center text-uppercase">Month wise Sales Report With Product</h4>
+        <table class="table table-striped table-bordered">
+
+            <thead class="bg-dark text-white">
+                <tr>
+                    <th>Date</th>
+                    <th>Product Name </th>
+                    <th>Quantity</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Date.ToString("MMM/yy")</td>
+                        <td>@item.ProductName.ProductName </td>
+                        <td>@item.Quantity</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a href="Index">Back</a>
+
+    </div>
+</body>
+</html>
